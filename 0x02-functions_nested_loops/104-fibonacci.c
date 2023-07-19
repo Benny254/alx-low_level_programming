@@ -1,4 +1,4 @@
-#include <stdio.o>
+#include <stdio.h>
 
 /**
  * main - fibonacci <3
