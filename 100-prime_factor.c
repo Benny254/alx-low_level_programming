@@ -17,7 +17,7 @@ int main(void)
 
 	while (n % 2 == 0)
 	{
-		ma = 2;
+		max = 2;
 		n /= 2;
 	}
 	for (i = 3; i <= sqrt(n); i = i +2)
