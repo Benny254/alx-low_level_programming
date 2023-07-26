@@ -29,7 +29,8 @@ char *cap_string(char *str)
 		    str[value - 1] == '}' ||
 		    str[value - 1] == '{' ||
 		    value == 0)
-			str[value] - = 32;
+			str[value] -= 32;
+
 		value++;
 	}
 
