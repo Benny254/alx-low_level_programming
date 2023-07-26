@@ -12,16 +12,17 @@ char *rot13(char *s)
 {
 	int a;
 	int b;
-	char index[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char indexrot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzsbcdefghijklm";
+	char data[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzsbcdefghijklm";
 
 	for (a = 0; s[a] != '\0'; a++)
 	{
 		for (b = 0; b < 52; b++)
 		{
-			if (s[a] == index1[b])
+			if (s[a] == data1[b])
 			{
-				s[a] = indexrot[b];
+				s[a] = datarot[b];
 				break;
 			}
 		}
