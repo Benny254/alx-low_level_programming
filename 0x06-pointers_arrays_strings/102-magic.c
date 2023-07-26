@@ -2,16 +2,16 @@
 
 int main(void)
 {
-	int m;
+	int n;
 	int a[5];
 	int *p;
 
 	a[2] = 1024;
-	p = &m;
+	p = &n;
 /*
  * Writing my line of code here.
  * Remainder:
- * - Am allowed to use a
+ * -Am allowed to use a
  * -Am allowed to modify p
  * -one statement only
  * -you are only allowed to code this line of code
