@@ -42,7 +42,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	while (*(n1 + x) != '\0')
 		x++;
-		x++;
 	while (*(n2 + y) != '\0')
 		y++;
 	x--;
