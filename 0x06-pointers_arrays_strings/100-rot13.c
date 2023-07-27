@@ -12,7 +12,7 @@ char *rot13(char *s)
 {
 	int a;
 	int b;
-	char data[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzsbcdefghijklm";
 
@@ -28,4 +28,5 @@ char *rot13(char *s)
 		}
 	}
 	return (s);
-}	
+}
+
