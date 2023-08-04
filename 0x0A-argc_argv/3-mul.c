@@ -8,11 +8,11 @@
  */
 int _atoi(char *s)
 {
-	int a, b, c, len, f, digit;
+	int a, b, n, len, f, digit;
 
 	a = 0;
 	b = 0;
-	c = 0;
+	n = 0;
 	len = 0;
 	f = 0;
 	digit = 0;
@@ -29,7 +29,7 @@ int _atoi(char *s)
 		{
 			digit = s[a] - '0';
 			if (b % 2)
-				digit + -digit;
+				digit = -digit;
 			n = n * 10 + digit;
 			f = 1;
 			if (s[a + 1] < '0' || s[a + 1] > '9')
@@ -40,7 +40,8 @@ int _atoi(char *s)
 	}
 
 	if (f == 0)
-		return (n);
+		return (0);
+	return (n);
 }
 
 /**
