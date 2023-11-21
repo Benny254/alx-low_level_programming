@@ -6,27 +6,27 @@
  */
 int main(void)
 {
-	int i, j;
+	int val1, val2;
 
-	for ( i = 0; i < 100; i++)
+	for (val1 = 0; val1 <= 98; val1++)
 	{
-		for ( j = 0; j < 100; j++)
+		for (val2 = val1 + 1; val2 <= 99; val2++)
 		{
-			if ( i < j)
-			{
-				putchar((i / 10) + 48);
-				putchar((i % 10) + 48);
-				putchar(' ');
-				putchar((j / 10) + 48);
-				putchar((j % 10) + 48);
-				if (i != 98 || j != 99)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
+			putchar((val1 / 10) + '0');
+			putchar((val1 % 10) + '0');
+			putchar(' ');
+			putchar((val2 / 10) + '0');
+			putchar((val2 % 10) + '0');
+
+			if (val1 == 98 && val2 == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
+
 	putchar('\n');
+
 	return (0);
 }
