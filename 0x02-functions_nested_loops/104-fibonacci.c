@@ -10,37 +10,44 @@
 
 int main(void)
 {
-	unsigned long int i;
-	unsigned long int bef = 1;
-	unsigned long int aft = 2;
-	unsigned long int l = 1000000000;
-	unsigned long int bef1;
-	unsigned long int bef2;
-	unsigned long int aft1;
-	unsigned long int aft2;
+	int c;
+	unsigned long fib3 = 0, fib4 = 1, sum;
+	unsigned long fib3_half1, fib3_half2, fib4_half1, fib4_half2;
+	unsigned long half1, half2;
 
-	printf("%lu", bef);
-
-	for (i = 1; i < 91; i++)
+	for (c = 0; c < 92; c++)
 	{
-		printf(", %lu", aft);
-		aft += bef;
-		bef = aft - bef;
+		sum = fib3 + fib4;
+		printf("%lu, ", sum);
+
+		fib3 = fib4;
+		fib4 = sum;
 	}
 
-	bef1 = (bef / 1);
-	bef2 = (bef % 1);
-	aft1 = (aft / 1);
-	aft2 = (aft % 1);
+	fib3_half1 = fib3 / 10000000000;
+	fib4_half1 = fib4 / 10000000000;
+	fib3_half2 = fib3 % 10000000000;
+	fib4_half2 = fib4 % 10000000000;
 
-	for (i = 92; i < 99; ++i)
+	for (c = 93; c < 99; c++)
 	{
-		printf(", %lu", aft1 + (aft2 / l));
-		printf("%lu", aft2 % l);
-		aft1 = aft1 + bef1;
-		bef1 = aft1 - bef1;
-		aft2 = aft2 + bef2;
-		bef2 = aft2 - aft2 - bef2;
+		half1 = fib3_half1 + fib4_half1;
+		half2 = fib3_half2 + fib4_half2;
+		if (fib3_half2 + fib4_half2 > 9999999999)
+		{
+			half1 += 1;
+			half2 %= 10000000000;
+		}
+
+		printf("%lu%lu", half1, half2);
+		if (c != 98)
+			printf(", ");
+
+		fib3_half1 = fib4_half1;
+		fib3_half2 = fib4_half2;
+		fib4_half1 = half1;
+		fib4_half2 = half2;
 	}
 	printf("\n");
+	return (0);
 }
