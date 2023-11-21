@@ -9,15 +9,18 @@
  */
 int main(void)
 {
-	int count;
-	unsigned long fib1 = 0, fib2 = 1, sum;
+	int c;
+	unsigned long fib3 = 0, fib4 = 1, sum;
 
-	for (count = 0; count < 50; count++)
+	for (c = 0; c < 50; c++)
 	{
-		sum = fib1 + fib2;
+		sum = fib3 + fib4;
 		printf("%lu", sum);
 
-		if (count == 49)
+		fib3 = fib4;
+		fib4 = sum;
+
+		if (c == 49)
 			printf("\n");
 		else
 			printf(", ");
