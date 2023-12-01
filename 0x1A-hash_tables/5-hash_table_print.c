@@ -14,15 +14,15 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		/* track last non null index starting from back */
 		a = ht->size;
-		while (a > 0)
+		for (; a > 0; a--)
 		{
 			if (ht->array[a - 1])
 			{
-				b = a - 1;
-				break;
+			b = a - 1;
+			break;
 			}
-			a--;
 		}
+
 		printf("{");
 		for (a = 0; a <= b; a++)
 		{
