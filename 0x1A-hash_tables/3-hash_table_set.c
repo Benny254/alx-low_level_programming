@@ -14,39 +14,25 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *tmp, *cur;
 
 	if (!ht || !key || *key == '\0' || !value)
-		return (0);
+	return (0);
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index])
 	{
 		cur = ht->array[index];
-		while (cur)
+		for (; cur; cur = cur->next)
 		{
-			if (strcmp(cur->key, (char *)key) == 0)
+		if (strcmp(cur->key, (char *)key) == 0)
 			{
-				free(cur->value);
-				cur->value = (char *)strdup(value);
-				return (1);
+			free(cur->value);
+			cur->value = (char *)strdup(value);
+			return (1);
 			}
-			cur = cur->next;
 		}
 	}
-	tmp = malloc(sizeof(hash_node_t));
-	if (tmp == NULL)
+		tmp = malloc(sizeof(hash_node_t));
+		if (tmp == NULL)
 		return (0);
-	tmp->key = (char *)strdup(key);
-	if (tmp->key == NULL)
-	{
-		free(tmp);
-		return (0);
-	}
-	tmp->value = (char *)strdup(value);
-	if (tmp->value == NULL)
-	{
-		free(tmp->key);
-		free(tmp);
-		return (0);
-	}
-	tmp->next = ht->array[index];
-	ht->array[index] = tmp;
-	return (1);
+		tmp->key = (char *)strdup(key);
+
+		return (1);
 }
